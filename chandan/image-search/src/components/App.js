@@ -3,9 +3,12 @@ import ImageList from './ImageList';
 import SearchBar from './SearchBar';
 import unsplash from '../api/unsplash';
 
-
 class App extends React.Component {
   state = { images: [] }
+
+  componentDidMount() {
+    this.onSearchSubmit('rocket');
+  }
 
   onSearchSubmit = async (searchTerm) => {
     const response = await unsplash.get('/search/photos', {
