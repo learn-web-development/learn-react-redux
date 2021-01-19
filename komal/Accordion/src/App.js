@@ -17,19 +17,22 @@ const items = [
   }
 ]
 
-export default  () => {
+const App = () => {
   return(
     <div>
       <Accordion items={items} />
     </div>
-  ) 
+  )
 }
-// const App = () => {
+
+export default App
+
+//created error on js console
+
+// export default  () => {
 //   return(
 //     <div>
 //       <Accordion items={items} />
 //     </div>
-//   )
+//   ) 
 // }
-
-// export default App
