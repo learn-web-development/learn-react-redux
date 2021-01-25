@@ -1,11 +1,22 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios'
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 const Search = () => {
-  const [term, setTerm] = useState( 'programming' )
-  const [results, setResult] = useState( [] )
+  const [term, setTerm] = useState("programming");
+  const [results, setResult] = useState([]);
+  const [debouncedTerm, setDebouncedTerm] = useState(term);
 
-  useEffect( () => {
+  useEffect(() => {
+    const timerId = setTimeout(() => {
+      setDebouncedTerm(term);
+    }, 500);
+
+    return () => {
+      clearTimeout(timerId);
+    };
+  }, [term]);
+
+  useEffect(() => {
     const search = async () => {
       const { data } = await axios.get("https://en.wikipedia.org/w/api.php", {
         params: {
@@ -13,36 +24,25 @@ const Search = () => {
           list: "search",
           origin: "*",
           format: "json",
-          srsearch: term,
+          srsearch: debouncedTerm,
         },
       });
 
       setResult(data.query.search);
     };
+    search();
+  }, [debouncedTerm]);
 
-    if ( term && !results.length ) {
-      search()
-    } else {
-      const timeoutId = setTimeout(() => {
-        if (term) {
-          search();
-        }
-      }, 500 );
-      
-      return () => {
-        clearTimeout(timeoutId)
-      }
-    }
-  }, [term] )
-
-  const renderedResults = results.map( result => {
+  const renderedResults = results.map((result) => {
     return (
       <div key={result.pageid} className="item">
         <div className="right floated content">
           <a
             className="ui button"
-            href={`https://en.wikipedia.org?curid=${result.pageid }`}
-          >Go</a>
+            href={`https://en.wikipedia.org?curid=${result.pageid}`}
+          >
+            Go
+          </a>
         </div>
         <div className="content">
           <div className="header">{result.title}</div>
@@ -50,8 +50,8 @@ const Search = () => {
         </div>
       </div>
     );
-  } )  
-  
+  });
+
   return (
     <div>
       <div className="ui form">
@@ -59,16 +59,14 @@ const Search = () => {
           <label>Enter the Text</label>
           <input
             value={term}
-            onChange={e => setTerm( e.target.value )}
+            onChange={(e) => setTerm(e.target.value)}
             className="input"
           />
         </div>
       </div>
-      <div className='ui celled list'>
-        {renderedResults}
-      </div>
+      <div className="ui celled list">{renderedResults}</div>
     </div>
-  )
-}
+  );
+};
 
 export default Search;

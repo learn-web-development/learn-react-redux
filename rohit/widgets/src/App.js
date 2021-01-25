@@ -1,26 +1,28 @@
-import React from 'react';
-//import Accordion from './componets/Accordion';
+import React from "react";
+//import Accordion from './components/Accordion';
 import Search from "./components/Search";
 
-const items = [
+/* const items = [
   {
-    title: 'What is React?',
-    content: 'React is a frond end javascript framework'
+    title: "What is React?",
+    content: "React is a frond end javascript framework",
   },
   {
-    title: 'Why use React?',
-    content: 'React is a favorite JS library among engineers'
+    title: "Why use React?",
+    content: "React is a favorite JS library among engineers",
   },
   {
-    title: 'How do you use React?',
-    content: 'You use React by creating components'
-  }
-]
+    title: "How do you use React?",
+    content: "You use React by creating components",
+  },
+]; */
 
-export default () => {
+const App = () => {
   return (
     <div>
       <Search />
-   </div>
-  )
-}
+    </div>
+  );
+};
+
+export default App;
