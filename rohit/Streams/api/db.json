@@ -1,0 +1,16 @@
+{
+  "streams": [
+    {
+      "title": "Best Application",
+      "description": "React based stream app",
+      "userId": "116271323783909673947",
+      "id": 1
+    },
+    {
+      "title": "Best programing",
+      "description": "Something better for this stream",
+      "userId": "116271323783909673947",
+      "id": 2
+    }
+  ]
+}
