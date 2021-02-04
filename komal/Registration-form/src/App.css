@@ -1,0 +1,84 @@
+h1{
+  color: purple;
+  font-size: 5em;
+  font-weight: 70px;
+  font-family: 'Vollkorn', serif;
+}
+
+body {
+  background-color: pink;
+}
+
+input[name=firstName] {
+  width: 30%;
+  padding: 12px 20px;
+  margin: 8px 0px;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 15px;
+  background-color: rgb(255, 249, 249);
+  color: rgb(10, 10, 10);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+input[name=lastName] {
+  width: 30%;
+  padding: 12px 20px;
+  margin: 8px 0px;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 15px;
+  background-color: rgb(255, 249, 249);
+  color: rgb(10, 10, 10);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+input[name=userName] {
+  width: 30%;
+  padding: 12px 20px;
+  margin: 8px 0px;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 15px;
+  background-color: rgb(255, 249, 249);
+  color: rgb(10, 10, 10);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+input[name=email] {
+  width: 30%;
+  padding: 12px 20px;
+  margin: 8px 0px;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 15px;
+  background-color: rgb(255, 249, 249);
+  color: rgb(10, 10, 10);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+input[name=password] {
+  width: 30%;
+  padding: 12px 20px;
+  margin: 8px 0px;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 15px;
+  background-color: rgb(255, 249, 249);
+  color: rgb(10, 10, 10);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+button {
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  width: 8%;
+  padding: 10px;
+  margin: 10px;
+  margin-inline-start: 10%;
+  border: none;
+  color: rgb(10, 10, 10);
+  background-color: rgb(255, 249, 249);
+  border-radius: 15px;
+}
+
